@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 import br.com.exercicios.classes.Animal;
 import br.com.exercicios.classes.Cachorro;
@@ -86,10 +87,10 @@ public class App {
             System.out.println("A área desta forma é: " + forma.calcularArea());
         }
 
-        ContaBancaria conta1 = new ContaBancaria(123, 2000.00);
-        ContaBancaria conta2 = new ContaBancaria(456, 2010.00);
-        ContaBancaria conta3 = new ContaBancaria(789, 3000.00);
-        ContaBancaria conta4 = new ContaBancaria(198, 4500.00);
+        ContaBancaria conta1 = new ContaBancaria("Filipe", 123, 2000.00);
+        ContaBancaria conta2 = new ContaBancaria("Ianca", 456, 2010.00);
+        ContaBancaria conta3 = new ContaBancaria("Joaquim", 789, 3000.00);
+        ContaBancaria conta4 = new ContaBancaria("Olavo", 198, 4500.00);
 
         ArrayList<ContaBancaria> listaDeContas = new ArrayList<>(4);
 
@@ -103,9 +104,14 @@ public class App {
         listaDeContas.sort(new ComparatorContaSaldo());
         System.out.println(listaDeContas);
         System.out.println();
-        
+
         System.out.println("Sort feito pelo Comparable da própria classe considerando numero da conta");
         Collections.sort(listaDeContas);
+        System.out.println(listaDeContas);
+        System.out.println();
+
+        System.out.println("Sort feito com lambda expression pelo nome do dono da conta");
+        listaDeContas.sort(Comparator.comparing(ContaBancaria::getNome));
         System.out.println(listaDeContas);
         System.out.println();
         
