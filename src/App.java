@@ -6,7 +6,7 @@ import br.com.exercicios.classes.Circulo;
 import br.com.exercicios.classes.ContaBancaria;
 import br.com.exercicios.classes.Produto;
 import br.com.exercicios.classes.Quadrado;
-import br.com.exercicios.comparators.ComparatorConta;
+import br.com.exercicios.comparators.ComparatorContaSaldo;
 import br.com.exercicios.interfaces.Forma;
 
 public class App {
@@ -97,7 +97,7 @@ public class App {
         listaDeContas.add(conta2);
         listaDeContas.add(conta1);
         
-        listaDeContas.sort(new ComparatorConta());
+        listaDeContas.sort(new ComparatorContaSaldo());
         
         ContaBancaria contaComMaiorSaldo = listaDeContas.get(0);
 
