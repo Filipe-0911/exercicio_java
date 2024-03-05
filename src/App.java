@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 import br.com.exercicios.classes.Animal;
 import br.com.exercicios.classes.Cachorro;
@@ -97,7 +98,16 @@ public class App {
         listaDeContas.add(conta2);
         listaDeContas.add(conta1);
         
+        System.out.println();
+        System.out.println("Sort pelo feito pelo Comparator considerando saldo");
         listaDeContas.sort(new ComparatorContaSaldo());
+        System.out.println(listaDeContas);
+        System.out.println();
+        
+        System.out.println("Sort feito pelo Comparable da própria classe considerando numero da conta");
+        Collections.sort(listaDeContas);
+        System.out.println(listaDeContas);
+        System.out.println();
         
         ContaBancaria contaComMaiorSaldo = listaDeContas.get(0);
 
